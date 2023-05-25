@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "HeatGeo"
-  site-url: "https://guillaumehu.github.io/HeatGeo"
+  title: "heatgeo"
+  site-url: "https://guillaumehu.github.io/heatgeo"
   description: "heat geodesic embeddings"
   repo-branch: main
-  repo-url: "https://github.com/guillaumehu/HeatGeo"
+  repo-url: "https://github.com/guillaumehu/heatgeo"

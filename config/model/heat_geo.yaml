@@ -3,7 +3,7 @@
 model_name: "heat_geo"
 
 model:
-  _target_: src.embedding.new_HeatGeo
+  _target_: src.embedding.new_heatgeo
   knn: 10 # TODO global param for knn
   anisotropy: 0
   decay: 40

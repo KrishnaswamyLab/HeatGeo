@@ -7,7 +7,7 @@ os.environ['PATH'] += ":/vast/palmer/apps/avx2/software/texlive/20220321-GCC-10.
 
 from experiments.datasets.toy_dataset import SwissRoll
 from experiments.datasets.sc_dataset import IPSC, EBData, PBMC
-from heatgeo.embedding import new_HeatGeo
+from heatgeo.embedding import new_heatgeo
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np
@@ -24,7 +24,7 @@ mar_order_embs = []
 
 for order in [5,10,20,30,40]:
 
-    model = new_HeatGeo(tau = "auto", order = order, knn = 5, filter_method = "mar", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
+    model = new_heatgeo(tau = "auto", order = order, knn = 5, filter_method = "mar", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
 
     emb = model.fit_transform(data)
 
@@ -37,7 +37,7 @@ edede
 harnack_embs = []
 for harnack_regul in [0,0.5,1.0,1.5,2]:
     print(harnack_regul)
-    model = new_HeatGeo(tau = "auto", order = 30, knn=5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = harnack_regul) #mds_weights_type="heat_kernel", scale_factor=2)  
+    model = new_heatgeo(tau = "auto", order = 30, knn=5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = harnack_regul) #mds_weights_type="heat_kernel", scale_factor=2)  
 
     emb = model.fit_transform(data)
 
@@ -48,7 +48,7 @@ np.save("harnack_embs.npy", harnack_embs)
 knn_embs = []
 for knn in [3,5,10,15,20]:
 
-    model = new_HeatGeo(tau = "auto", order = 30, knn=knn, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
+    model = new_heatgeo(tau = "auto", order = 30, knn=knn, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
 
     emb = model.fit_transform(data)
 
@@ -60,7 +60,7 @@ order_embs = []
 
 for order in [10,20,30,40,50]:
 
-    model = new_HeatGeo(tau = "auto", order = order, knn = 5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
+    model = new_heatgeo(tau = "auto", order = order, knn = 5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
 
     emb = model.fit_transform(data)
 
@@ -72,7 +72,7 @@ tau_embs = []
 
 for tau in [1,5,10,20, "auto"]:
 
-    model = new_HeatGeo(tau = tau, order = 30, knn = 5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
+    model = new_heatgeo(tau = tau, order = 30, knn = 5, filter_method = "euler", log_normalize = False, emb_dim=2, harnack_regul = 0.) #mds_weights_type="heat_kernel", scale_factor=2)  
 
     emb = model.fit_transform(data)
 
