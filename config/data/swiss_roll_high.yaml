@@ -1,0 +1,13 @@
+# @package _global_
+
+dataset_name: swiss_roll_high
+
+data:
+  _target_: src.dataset.SwissRollStretch
+  _partial_: True
+  n_points: 2000
+  manifold_noise: 0.05
+  width: 5
+  rotate: True
+  rotate_dim: 10
+  clustered: False

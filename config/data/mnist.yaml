@@ -1,0 +1,8 @@
+# @package _global_
+
+dataset_name: mnist
+
+data:
+  _target_: src.sc_dataset.MNIST
+  _partial_: True
+  n_points: 2000

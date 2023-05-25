@@ -1,0 +1,17 @@
+# @package _global_
+
+# @package _global_
+
+defaults: 
+  - tau_sweep/all_data
+
+hydra:
+  sweeper:
+    params:
+      name : diff_map_tau_sweep
+      model : diff_map
+      model.knn : 10
+      model.tau : 1,10,50,100
+      model.emb_dim : 2
+      model.anisotropy : 0
+

@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults: 
+  - tau_sweep/all_data
+
+
+hydra:
+  sweeper:
+    params:
+      name : phate_tau_sweep
+      model : phate
+      model.n_pca : 50
+      model.tau : 1,10,50,100,auto
+      model.emb_dim : 2

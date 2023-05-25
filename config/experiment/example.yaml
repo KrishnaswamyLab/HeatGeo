@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults: 
+  - all_data
+
+
+hydra:
+  sweeper:
+    params:
+      name : diff_map
+      model : diff_map

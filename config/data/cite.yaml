@@ -1,0 +1,9 @@
+# @package _global_
+
+dataset_name: cite
+
+data:
+  _target_: src.sc_dataset.MultiCiteSeq
+  _partial_: True
+  data_file: op_cite_inputs_0.h5ad #op_cite_inputs_[0-3].h5ad, op_train_multi_targets_[0-2].h5ad wot_v1.h5ad
+  n_points: 2000

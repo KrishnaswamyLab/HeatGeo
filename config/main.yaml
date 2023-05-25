@@ -1,0 +1,35 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - _self_
+  - log_dir: default.yaml
+  - data: default.yaml
+  - model: heat_geo.yaml
+  - launcher: basic.yaml
+  - data_sweeper: null
+  # - graph: graphtools.yaml
+
+  # experiment configs allow for version control of specific configurations
+  # e.g. best hyperparameters for each combination of model and datamodule
+  - experiment: null
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the new log directory
+# https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+original_work_dir: ${hydra:runtime.cwd}
+
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: null
+# number of seeds for the experiment.
+n_seeds: 10
+
+# default name for the experiment, determines logging folder path
+# (you can overwrite this name in experiment configs)
+name: "default"
+
+# default to old behavior, change working directory to experimental directory
+hydra:
+  job:
+    chdir: True

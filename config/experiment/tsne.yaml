@@ -1,0 +1,12 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : tsne
+      model : tsne
+      model.perplexity : 10,30,100
+      model.n_components : 2

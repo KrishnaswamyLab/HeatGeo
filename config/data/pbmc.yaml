@@ -1,0 +1,8 @@
+# @package _global_
+
+dataset_name: pbmc
+
+data:
+  _target_: src.sc_dataset.PBMC
+  _partial_: True
+  n_points: 1300

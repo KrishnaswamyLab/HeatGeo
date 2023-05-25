@@ -1,0 +1,16 @@
+# @package _global_
+
+model_name: "diff_map"
+
+model:
+  _target_: src.embedding.DiffusionMap
+  knn: 10 # TODO global param for knn
+  decay: 40
+  n_pca: False # Swiss roll is in 3d
+  anisotropy: 0 # is default to 0.
+  tau: 1
+  order: null
+  tau_min: null
+  tau_max: null
+  n_tau: null
+  emb_dim: 10

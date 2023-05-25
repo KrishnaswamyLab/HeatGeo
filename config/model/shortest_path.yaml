@@ -1,0 +1,14 @@
+# @package _global_
+
+model_name: "shortest_path"
+
+model:
+  _target_: src.embedding.ShortestPath
+  knn: 50 # TODO global param for knn
+  decay: 40
+  n_pca: False # Swiss roll is in 3d
+  anisotropy: 0 # is default to one.
+  method: auto
+  emb_dim: 10
+  graph_type: knn
+  #distance: data

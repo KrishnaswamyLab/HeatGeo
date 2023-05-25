@@ -1,0 +1,8 @@
+# @package _global_
+
+model_name: "PCA"
+
+model:
+  _target_: sklearn.decomposition.PCA
+  n_components: 10
+  svd_solver: randomized

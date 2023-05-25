@@ -1,0 +1,16 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : heat_phate
+      model : heat_phate
+      model.knn : 10,15
+      model.order : 15,30
+      model.tau : 0.1,1,10,50,auto
+      model.emb_dim : 2
+      model.filter_method : euler
+      model.lap_type : combinatorial

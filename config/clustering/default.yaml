@@ -1,0 +1,6 @@
+# @package _global_
+
+# The KNN classifier
+knn:
+  n_neighbors: 10
+  n_clusters: 0

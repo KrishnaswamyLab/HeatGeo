@@ -1,0 +1,21 @@
+# @package _global_
+
+model_name: "rand_geo"
+
+model:
+  _target_: src.embedding.RandWalkGeo
+  knn: 10 # TODO global param for knn
+  anisotropy: 0
+  decay: 40
+  n_pca: False # our toy dataset are in small dim.
+  tau: 5
+  order: 30
+  emb_dim: 10
+  filter_method: "symmetric" # "exact" or "affinity", "symmetric"
+  lap_type: "normalized" # "normalized" or "combinatorial"
+  log_normalize: False # if True distance is divided by log(tau)
+  scale_factor: 1.0 # Element wise power of the distance matrix
+  denoising: False # Selective denoising
+  n_ref: 1 # Number of reference points when denoising.
+  n_svd: 0 # Number of SVD components for minibatch kmeans in the selective denoising.
+  graph_type: "alpha"

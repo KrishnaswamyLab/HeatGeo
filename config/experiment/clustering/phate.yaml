@@ -1,0 +1,13 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : phate_clustering
+      model : phate
+      model.n_pca : 50
+      model.tau : auto
+      model.emb_dim : 2

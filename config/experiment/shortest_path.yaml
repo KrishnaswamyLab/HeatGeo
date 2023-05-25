@@ -1,0 +1,12 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : shortest_path
+      model : shortest_path
+      model.knn : 5,10,15
+      model.emb_dim : 2

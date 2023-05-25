@@ -1,0 +1,9 @@
+# @package _global_
+
+dataset_name: multi
+
+data:
+  _target_: src.sc_dataset.MultiCiteSeq
+  _partial_: True
+  data_file: op_train_multi_targets_0.h5ad # wot_v1.h5ad
+  n_points: 2000

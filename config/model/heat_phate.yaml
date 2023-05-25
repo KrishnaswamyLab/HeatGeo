@@ -1,0 +1,17 @@
+# @package _global_
+
+model_name: "heat_phate"
+
+model:
+  _target_: src.embedding.EmbHeatPHATE
+  knn: 10
+  anisotropy: 0
+  decay: 40
+  n_pca: False # Swiss roll is in 3d
+  tau: 10
+  order: 32
+  lap_type: normalized # "normalized" or "combinatorial"
+  filter_method: euler # "euler" or "mar" or "pygsp"
+  emb_dim: 10 
+  graph_type: "alpha"
+  tau_max: 200

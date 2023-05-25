@@ -1,0 +1,10 @@
+# @package _global_
+
+model_name: "t-SNE"
+
+model:
+  _target_: sklearn.manifold.TSNE
+  n_components: 10
+  perplexity: 30
+  early_exaggeration: 12.0
+  method: exact

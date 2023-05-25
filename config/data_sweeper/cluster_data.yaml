@@ -1,0 +1,9 @@
+# @package _global_
+
+hydra:
+  sweeper:
+    params:
+      data : swiss_roll, swiss_roll_high, swiss_roll_very_high, tree #, tree, tree_high
+      data.clustered : true
+      data.manifold_noise : 0.1, 0.5, 1 #data.manifold_noise : 0.1, 0.5, 1, 5, 10
+      knn.n_clusters: 0 #setting the number of clusters to be the number of classes in the data

@@ -1,0 +1,38 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - log_dir: default.yaml
+  - launcher: mila_cluster_cpu.yaml
+  - data: eb.yaml
+  - model: heat_geo.yaml
+
+
+  # experiment configs allow for version control of specific configurations
+  # e.g. best hyperparameters for each combination of model and datamodule
+  #- experiment: null
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the new log directory
+# https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+original_work_dir: ${hydra:runtime.cwd}
+
+
+data:
+  n_points: 3000 # number of points to sample from the dataset
+
+n_seeds: 5 # number of seeds to run
+
+
+
+
+# default name for the experiment, determines logging folder path
+# (you can overwrite this name in experiment configs)
+name: "interpolation_v1"
+# "interpolation_v1" is in 2D with 3k points
+# interpolation is in 5D with 5k points
+
+# default to old behavior, change working directory to experimental directory
+hydra:
+  job:
+    chdir: True

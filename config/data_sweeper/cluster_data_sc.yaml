@@ -1,0 +1,7 @@
+# @package _global_
+
+hydra:
+  sweeper:
+    params:
+      data : pbmc, mnist  #, tree, tree_high
+      knn.n_clusters: 0 #setting the number of clusters to be the number of classes in the data

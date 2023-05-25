@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults: 
+  - knn_sweep/all_data
+
+hydra:
+  sweeper:
+    params:
+      name : phate_knn_sweep
+      model : phate
+      model.n_pca : 50
+      model.tau : auto
+      model.emb_dim : 2
+      model.knn : 5, 10, 15, 20, 30

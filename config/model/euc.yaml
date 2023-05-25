@@ -1,0 +1,6 @@
+# @package _global_
+
+model_name: "euc"
+
+model:
+  _target_: src.embedding.EucDist

@@ -1,0 +1,8 @@
+# @package _global_
+
+dataset_name: ipsc
+
+data:
+  _target_: src.sc_dataset.IPSC
+  _partial_: True
+  n_points: 2000

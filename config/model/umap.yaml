@@ -1,0 +1,9 @@
+# @package _global_
+
+model_name: "UMAP"
+
+model:
+  _target_: umap.UMAP
+  n_components: 10
+  n_neighbors: 10
+  min_dist: 0.1

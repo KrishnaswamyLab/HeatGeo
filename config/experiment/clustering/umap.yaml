@@ -1,0 +1,13 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : umap_clustering
+      model : umap
+      model.n_neighbors : 5, 15
+      model.n_components : 2
+      model.min_dist : 0.1,0.5,0.99

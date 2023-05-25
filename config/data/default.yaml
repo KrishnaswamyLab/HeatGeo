@@ -1,0 +1,12 @@
+# @package _global_
+
+dataset_name: swiss_roll
+
+data:
+  _target_: src.dataset.SwissRoll
+  _partial_: True
+  n_points: 200
+  manifold_noise: 0.05
+  width: 5
+  rotate: False
+  rotate_dim: 3

@@ -1,0 +1,12 @@
+# @package _global_
+
+model_name: "phate"
+
+model:
+  _target_: src.embedding.PhateBasic
+  knn: 10
+  anisotropy: 0
+  decay: 40
+  n_pca: 100 # Swiss roll is in 3d
+  tau: "auto" # Default to auto, von neuman entropy.
+  emb_dim: 10

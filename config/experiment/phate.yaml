@@ -1,0 +1,14 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+
+hydra:
+  sweeper:
+    params:
+      name : phate
+      model : phate
+      model.n_pca : 50,100
+      model.tau : auto,1,5,10,20
+      model.emb_dim : 2

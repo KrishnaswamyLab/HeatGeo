@@ -1,0 +1,14 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : diff_map
+      model : diff_map
+      model.knn : 5,10,15
+      model.tau : 1,5,10,20
+      model.emb_dim : 2
+      model.anisotropy : 0

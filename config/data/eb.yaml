@@ -1,0 +1,8 @@
+# @package _global_
+
+dataset_name: EB
+
+data:
+  _target_: src.sc_dataset.EBData
+  _partial_: True
+  n_points: 2000

@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults: 
+  - knn_sweep/all_data
+
+hydra:
+  sweeper:
+    params:
+      name : shortest_path_knn_sweep
+      model : shortest_path
+      model.knn : 5, 10, 15, 20, 30
+      model.emb_dim : 2
+      model.graph_type: knn

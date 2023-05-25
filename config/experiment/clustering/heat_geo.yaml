@@ -1,0 +1,22 @@
+# @package _global_
+
+#defaults: 
+#  - all_data
+
+hydra:
+  sweeper:
+    params:
+      name : heat_geo_clustering
+      model : heat_geo
+      model.knn : 5
+      model.n_pca: 40
+      model.order : 30
+      model.tau : auto
+      model.emb_dim : 2
+      model.filter_method : euler
+      model.lap_type : combinatorial
+      model.harnack_regul: 0, 0.25, 0.5, 0.75, 1 #, 1.5
+      model.mds_weights_type: None, heat_kernel # None 
+      model.scale_factor: 2 # 1, 2
+      model.denoising: True, False
+      model.denoise_regul: 0.5, 0.

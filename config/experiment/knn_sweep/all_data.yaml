@@ -1,0 +1,9 @@
+# @package _global_
+
+
+hydra:
+  sweeper:
+    params:
+      data : tree, tree_high, swiss_roll_high, swiss_roll, swiss_roll_very_high #, tree, tree_high
+      data.manifold_noise : 0.1, 0.5, 1 #data.manifold_noise : 0.1, 0.5, 1, 5, 10
+      data.n_points : 200

@@ -1,0 +1,28 @@
+# @package _global_
+
+model_name: "heat_geo"
+
+model:
+  _target_: src.embedding.new_HeatGeo
+  knn: 10 # TODO global param for knn
+  anisotropy: 0
+  decay: 40
+  n_pca: False # our toy dataset are in small dim.
+  tau: auto 
+  emb_dim: 10
+  tau_min: 0.05
+  tau_max: 200 
+  n_tau: 1 # "euler" method does not work for Multiscale.
+  order: 30
+  filter_method: "mar" # "euler" or "mar", "pygsp"
+  lap_type: "normalized" # "normalized" or "combinatorial"
+  log_normalize: False # if True distance is divided by log(tau)
+  scale_factor: 1.0 # Element wise power of the distance matrix
+  denoising: False # Selective denoising
+  n_ref: 1 # Number of reference points when denoising.
+  n_svd: 0 # Number of SVD components for minibatch kmeans in the selective denoising.
+  harnack_regul: 0 # Harnack regularization, i.e. adding the V(x,\sqrt(t)). Should be between 0 and 1.
+  graph_type: "alpha" # scanpy, alpha, knn, umap.
+  mds_weights_type: None, # "heat_kernel", "inv_dist","gaussian_dist"`
+  mds_weights_args: None # args for `inv_dist` and `gaussian_dist` MDS weights
+  denoise_regul: 0.0 # Regularization for the denoising.

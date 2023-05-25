@@ -1,0 +1,13 @@
+# @package _global_
+
+dataset_name: tree
+
+data:
+  _target_: src.dataset.TreePhate
+  _partial_: True
+  n_dim: 10
+  n_points: 500
+  n_branch: 5
+  manifold_noise: 4
+  knn_geodesic: 10
+  clustered: None
