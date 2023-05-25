@@ -5,8 +5,8 @@ import hydra
 import os
 import pandas as pd
 import time
-from src.dataset import SwissRoll
-from src.knn_methods import KNNClassifier
+from experiments.datasets.toy_dataset import SwissRoll
+from experiments.evaluation.knn_methods import KNNClassifier
 from hydra.utils import instantiate
 
 

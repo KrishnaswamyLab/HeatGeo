@@ -5,9 +5,9 @@ import yaml
 import os
 os.environ['PATH'] += ":/vast/palmer/apps/avx2/software/texlive/20220321-GCC-10.2.0/bin/x86_64-linux/"
 
-from src.dataset import SwissRoll
-from src.sc_dataset import IPSC, EBData, PBMC
-from src.embedding import new_HeatGeo
+from experiments.datasets.toy_dataset import SwissRoll
+from experiments.datasets.sc_dataset import IPSC, EBData, PBMC
+from heatgeo.embedding import new_HeatGeo
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np

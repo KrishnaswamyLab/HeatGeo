@@ -5,11 +5,11 @@ import hydra
 import os
 import pandas as pd
 import time
-from src.dataset import SwissRoll
-from src.knn_methods import KNNClassifier
+from experiments.datasets.toy_dataset import SwissRoll
+from experiments.evaluation.knn_methods import KNNClassifier
 from hydra.utils import instantiate
 from sklearn.metrics.pairwise import pairwise_distances
-from src.emd import eval_interpolation, sinkhorn_mccann
+from experiments.evaluation.emd import eval_interpolation, sinkhorn_mccann
 import numpy as np
 
 

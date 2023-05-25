@@ -3,7 +3,6 @@ import scanpy as sc
 import sys
 import os
 from dotenv import load_dotenv
-from src import DATA_DIR
 from sklearn.model_selection import train_test_split
 
 load_dotenv()

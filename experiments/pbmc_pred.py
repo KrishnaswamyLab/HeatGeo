@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, rand_score, adjusted_rand_score
 import scanpy as sc
 import numpy as np
-from src.knn_methods import eval_k_means
+from experiments.evaluation.knn_methods import eval_k_means
 
 
 @hydra.main(version_base=None, config_path="config", config_name="main_pred")

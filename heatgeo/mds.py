@@ -130,7 +130,9 @@ def embed_MDS(
 
     if solver == "sgd":
         # use sgd2 if it is available
-        Y = sgd(X_dist, w=mds_weights ,n_components=ndim, random_state=seed, init=Y_classic)
+        Y = sgd(
+            X_dist, w=mds_weights, n_components=ndim, random_state=seed, init=Y_classic
+        )
         # sgd2 currently only supports n_components==2
     elif solver == "smacof":
         Y = smacof(

@@ -2,7 +2,7 @@ import numpy as np
 from sksparse.cholmod import cholesky
 import scipy
 import pygsp
-from src.cheb import expm_multiply
+from heatgeo.cheb import expm_multiply
 from scipy.sparse.linalg import eigsh
 from typing import Union
 
@@ -22,7 +22,7 @@ class Heat_Euler:
         Id = scipy.sparse.eye(N)
 
         # Backward Euler (implicit Euler)
-        
+
         M = Id + (t / K) * L
 
         # Using Cholesky prefactorization
@@ -73,14 +73,17 @@ class Heat_filter:
             raise ValueError("method must be one of {}".format(self._valid_methods))
 
         if method == "euler":
-            if isinstance(self.tau,list):
+            if isinstance(self.tau, list):
                 self.tau = np.array(self.tau)
-            if isinstance(self.tau,Union[int,float]):
+            if isinstance(self.tau, Union[int, float]):
                 self.tau = np.array([self.tau])
-            if len(self.tau)==1:
+            if len(self.tau) == 1:
                 self._filter = [Heat_Euler(graph.L, self.tau[0], order)]
             else:
-                self._filter = [Heat_Euler(graph.L, self.tau[i], order) for i in range(len(self.tau))]
+                self._filter = [
+                    Heat_Euler(graph.L, self.tau[i], order)
+                    for i in range(len(self.tau))
+                ]
 
         elif method == "pygsp":
             graph.estimate_lmax()
@@ -90,7 +93,7 @@ class Heat_filter:
             self.phi = eigsh(self.graph.L, k=1, return_eigenvectors=False)[0] / 2
 
         elif method == "lowrank":
-            N = graph.L.shape[0]
+            graph.L.shape[0]
             eval, evec = scipy.sparse.linalg.eigsh(self.graph.L, k=order, which="SM")
             # L = self.graph.L.toarray()
             # L = (L + L.T)/2 # The matrix is already symmetric, but this is to avoid numerical errors.
@@ -105,10 +108,10 @@ class Heat_filter:
 
         if self.method == "euler":
             N = b.shape[0]
-            diff = np.zeros((N,N,len(self.tau)))
+            diff = np.zeros((N, N, len(self.tau)))
             for i in range(N):
                 for i_f, f in enumerate(self._filter):
-                    diff[i, :,i_f] = f(b[i, :])
+                    diff[i, :, i_f] = f(b[i, :])
             return diff
 
         elif self.method == "pygsp":

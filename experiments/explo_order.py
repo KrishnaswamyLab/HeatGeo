@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score, rand_score, adjusted_rand_score
 import scanpy as sc
 import numpy as np
 import matplotlib.pyplot as plt
-from src.knn_methods import eval_k_means
+from experiments.evaluation.knn_methods import eval_k_means
 import os
 
 
