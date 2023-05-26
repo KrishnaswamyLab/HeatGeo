@@ -4,15 +4,20 @@
 __all__ = ['diff_op', 'kernel_degree', 'diff_aff', 'get_knn_graph', 'get_alpha_decay_graph', 'get_scanpy_graph', 'get_umap_graph']
 
 # %% ../nbs/graph.ipynb 2
-import scanpy as sc
 import graphtools as gt
 import pygsp
 from typing import Union
-import umap
 from graphtools.matrix import set_diagonal, to_array
 from scipy import sparse
 from sklearn.preprocessing import normalize
 import numpy as np
+try:
+    # optional dependencies
+    import scanpy as sc
+    import umap
+except ImportError as imp_err:
+    sc = imp_err
+    umap = imp_err
 
 # %% ../nbs/graph.ipynb 3
 def diff_op(graph):
@@ -82,6 +87,11 @@ def get_alpha_decay_graph(X,
 
 
 def get_scanpy_graph(X, knn=5, **kwargs):
+
+    if isinstance(sc, ImportError):
+        raise ImportError(
+            "Scanpy is not installed.")
+
     adata = sc.AnnData(X)
     sc.pp.neighbors(adata, n_neighbors=knn)
     w = adata.obsp["connectivities"]
@@ -89,6 +99,9 @@ def get_scanpy_graph(X, knn=5, **kwargs):
 
 
 def get_umap_graph(X, knn=5, **kwargs):  # knn default to 15 in UMAP
+    if isinstance(umap, ImportError):
+        raise ImportError(
+            "UMAP is not installed.")
     umap_op = umap.UMAP(n_neighbors=knn, metric="euclidean")
     umap_op.fit(X)
     w = umap_op.graph_.toarray()

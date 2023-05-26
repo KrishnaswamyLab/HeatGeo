@@ -7,4 +7,5 @@ website:
       - graph.ipynb
       - heat_filter.ipynb
       - mds.ipynb
+      - other_emb.ipynb
       - utils.ipynb
