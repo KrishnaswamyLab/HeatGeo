@@ -11,16 +11,16 @@ The package is not yet available with pip or conda. To install it, you
 can clone this repo and install from `setup.py`.
 
 ``` sh
-cd heatgeo
+cd HeatGeo
 pip install -e .
 ```
 
 To reproduce the results in `experiments/` or try the embeddings with
 different graph constructions, you need additional packages that can be
-installed via the devellopement version. In this case run
+installed via the development version. In this case run
 
 ``` sh
-cd heatgeo
+cd HeatGeo
 pip install -e '.[dev]'
 ```
 
@@ -32,7 +32,10 @@ in the CLI. In `notebooks`, we provide examples on toy datasets.
 
 ### Acknowledgements
 
-This repository uses or modify code from the PHATE implementation
+This repository is a simplified version of a larger codebase used for
+development. It loses the original commit history which contains
+contributions other authors of the paper. This repository uses or modify
+code from the PHATE implementation
 https://github.com/KrishnaswamyLab/PHATE, and the Chebychev polynomials
 implementation
 https://github.com/sibyllema/Fast-Multiscale-Diffusion-on-Graphs.
