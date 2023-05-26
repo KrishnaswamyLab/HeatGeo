@@ -3,7 +3,7 @@ project:
 
 website:
   title: "heatgeo"
-  site-url: "https://guillaumehu.github.io/heatgeo"
-  description: "heat geodesic embeddings"
+  site-url: "https://KrishnaswamyLab.github.io/heatgeo"
+  description: "Heat geodesic embeddings"
   repo-branch: main
-  repo-url: "https://github.com/guillaumehu/heatgeo"
+  repo-url: "https://github.com/KrishnaswamyLab/heatgeo"

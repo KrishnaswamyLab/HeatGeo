@@ -1,1 +1,1 @@
-Sitemap: https://guillaumehu.github.io/heatgeo/sitemap.xml
+Sitemap: https://KrishnaswamyLab.github.io/heatgeo/sitemap.xml
