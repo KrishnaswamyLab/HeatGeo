@@ -24,40 +24,40 @@ class BaseEmb:
     """Base class for embedding methods.
     Arguments
     ---------
-    knn: int
-        Number of nearest neighbors to use for the graph.
-    anisotropy: int
-        Anisotropy parameter for the graph.
-    decay: int
-        Decay parameter for the kernel.
-    n_pca: int
-        Number of principal components to use for knn estimation.
-    tau: int or str
-        Diffusion time of the diffusion operator on the graph.
-    emb_dim: int
-        Dimension of the embedding.
-    order: int
-        Order of the Chebyshev approximation.
-    random_state: int
-        Random state for the embedding.
-    scale_factor: int
-        Power when computing the distance matrix.
-    tau_min: float
-        Minimum diffusion time for the diffusion operator.
-    tau_max: float
-        Maximum diffusion time for the diffusion operator.
-    n_tau: int
-        Number of diffusion times for the multiscale diffusion operator.
-    n_landmarks: int
-        Number of landmarks to summarize the data.
-    solver: str
-        Solver to use for MDS, `"sgd"` or `"smacof"`.
-    lap_type: str
-        Type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`.
-    filter_method: str
-        Method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`.
-    graph_type: str
-        Type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`.
+        knn: int
+            Number of nearest neighbors to use for the graph.
+        anisotropy: int
+            Anisotropy parameter for the graph.
+        decay: int
+            Decay parameter for the kernel.
+        n_pca: int
+            Number of principal components to use for knn estimation.
+        tau: int or str
+            Diffusion time of the diffusion operator on the graph.
+        emb_dim: int
+            Dimension of the embedding.
+        order: int
+            Order of the Chebyshev approximation.
+        random_state: int
+            Random state for the embedding.
+        scale_factor: int
+            Power when computing the distance matrix.
+        tau_min: float
+            Minimum diffusion time for the diffusion operator.
+        tau_max: float
+            Maximum diffusion time for the diffusion operator.
+        n_tau: int
+            Number of diffusion times for the multiscale diffusion operator.
+        n_landmarks: int
+            Number of landmarks to summarize the data.
+        solver: str
+            Solver to use for MDS, `"sgd"` or `"smacof"`.
+        lap_type: str
+            Type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`.
+        filter_method: str
+            Method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`.
+        graph_type: str
+            Type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`.
     """
 
     def __init__(

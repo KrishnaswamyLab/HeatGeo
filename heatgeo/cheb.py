@@ -4,6 +4,11 @@
 __all__ = ['g', 'get_bound_eps_generic', 'get_bound_eta_generic', 'get_bound_eta_specific', 'E', 'get_bound_bergamaschi_generic',
            'get_bound_bergamaschi_specific', 'reverse_bound', 'compute_chebychev_coeff_all', 'expm_multiply']
 
+# %% ../nbs/cheb.ipynb 2
+## Code from https://github.com/sibyllema/Fast-Multiscale-Diffusion-on-Graphs
+## Commit: 949ed48
+## Paper: https://arxiv.org/pdf/2104.14652.pdf
+
 # %% ../nbs/cheb.ipynb 3
 ## Code from https://github.com/sibyllema/Fast-Multiscale-Diffusion-on-Graphs
 ## Commit: 949ed48
