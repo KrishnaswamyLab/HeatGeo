@@ -25,7 +25,7 @@ def interpolate(x0, x1, n_steps):
 
 def time_entropy(H):
     """
-    Argurments
+    Parameters
     ----------
     H: np.array (n_nodes, n_nodes, n_times)
     Returns
@@ -48,7 +48,7 @@ def get_optimal_heat(emb_op, tau_max: float = 50, n_tau: int = 20):
 
     Optimal tau is found using Checbyshev approximation.
 
-    Arguments
+    Parameters
     ---------
     emb_op: BaseEmb
         Embedding operator.

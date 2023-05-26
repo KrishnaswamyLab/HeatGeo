@@ -9,46 +9,9 @@ import scipy
 import pygsp
 from .cheb import expm_multiply
 from scipy.sparse.linalg import eigsh
-from typing import Union
+from typing import Union, Any, Callable
 
-# %% ../nbs/heat_filter.ipynb 3
-# implicit Euler discretization of the heat equation.
-# Code inspired by Heitz et al, 2020
-# https://github.com/matthieuheitz/2020-JMIV-ground-metric-learning-graphs/blob/main_release/ml_kinterp2.py
-
-
-# class Heat_Euler:
-#     """Implicit Euler discretization of the heat equation using Chelesky prefactorization."""
-# NOTE: this is the implementation  using scikit_sparse
-
-#     def __init__(self, L, t, K):
-#         """L: Laplacian N X N
-#         t: time regularization param.
-#         S: number of steps."""
-#         N = L.shape[0]
-#         Id = scipy.sparse.eye(N)
-
-#         # Backward Euler (implicit Euler)
-
-#         M = Id + (t / K) * L
-
-#         # Using Cholesky prefactorization
-#         Mpre = cholesky(M.tocsc(), ordering_method="metis")
-
-#         self.solve = Mpre.solve_A
-#         self.Mpre = Mpre
-#         self.M = M
-#         self.N = N
-#         self.K = K
-
-#     def __call__(self, b):
-#         """Discretization of the heat equation with init. condition b."""
-#         u_l = np.zeros([self.K + 1, self.N])
-#         u_l[0] = b
-#         for i in range(1, self.K + 1):
-#             u_l[i] = self.solve(u_l[i - 1])
-#         return u_l[self.K]
-
+# %% ../nbs/heat_filter.ipynb 4
 class Heat_Euler:
     """Implicit Euler discretization of the heat equation using Cholesky prefactorization."""
 
@@ -83,23 +46,15 @@ class Heat_Euler:
 
 class Heat_filter:
     """Wrapper for the approximation of the heat kernel.
-
-    Arguments
-    ---------
-    graph:
-    t: diffusion time.
-    order: number of steps or order of the polynomial approximation.
-    method: 'euler', 'pygsp', 'mar'.
-
-
-    Returns
-    -------
-    Callable that takes as input a vector b and returns its diffusion.
     """
 
     _valid_methods = ["euler", "pygsp", "mar", "lowrank", "exact"]
 
-    def __init__(self, graph, tau, order, method="euler"):
+    def __init__(self, graph:Any, # Graph object
+                        tau: float, # Diffusion time 
+                        order: int, # Degree or numver of steps
+                        method: str, # filter `"pygsp"`, `"mar"`, `"euler"`
+                        ) -> Callable:
         self.graph = graph
         self.tau = tau
         self.order = order

@@ -4,7 +4,7 @@
 __all__ = ['RandWalkGeo', 'DiffusionMap', 'ShortestPath', 'PhateBasic']
 
 # %% ../nbs/other_emb.ipynb 2
-from .embedding import BaseEmb, new_heatgeo
+from .embedding import BaseEmb, HeatGeo
 import heatgeo.graph as graph_utils
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
@@ -19,7 +19,7 @@ except ImportError as imp_err:
     phate = imp_err
 
 # %% ../nbs/other_emb.ipynb 3
-class RandWalkGeo(new_heatgeo):
+class RandWalkGeo(HeatGeo):
     """ HeatGeo with a random walk matrix instead of Heat kernel."""
 
     _valid_methods = [
