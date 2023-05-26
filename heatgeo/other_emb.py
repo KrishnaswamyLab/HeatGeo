@@ -20,13 +20,13 @@ except ImportError as imp_err:
 
 # %% ../nbs/other_emb.ipynb 3
 class RandWalkGeo(HeatGeo):
-    """ HeatGeo with a random walk matrix instead of Heat kernel."""
+    """HeatGeo with a random walk matrix instead of Heat kernel."""
 
     _valid_methods = [
         "exact",
         "affinity",
         "symmetric",
-    ]  
+    ]
 
     def __init__(
         self,
@@ -97,6 +97,7 @@ class RandWalkGeo(HeatGeo):
 # %% ../nbs/other_emb.ipynb 4
 class DiffusionMap(BaseEmb):
     """Diffusion Map embedding with different graph construction."""
+
     def __init__(
         self,
         knn: int = 0,
@@ -153,6 +154,7 @@ class DiffusionMap(BaseEmb):
 # %% ../nbs/other_emb.ipynb 5
 class ShortestPath(BaseEmb):
     """Shortest path embedding with different graph construction."""
+
     def __init__(
         self,
         knn: int,

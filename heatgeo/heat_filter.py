@@ -45,16 +45,17 @@ class Heat_Euler:
 
 
 class Heat_filter:
-    """Wrapper for the approximation of the heat kernel.
-    """
+    """Wrapper for the approximation of the heat kernel."""
 
     _valid_methods = ["euler", "pygsp", "mar", "lowrank", "exact"]
 
-    def __init__(self, graph:Any, # Graph object
-                        tau: float, # Diffusion time 
-                        order: int, # Degree or numver of steps
-                        method: str, # filter `"pygsp"`, `"mar"`, `"euler"`
-                        ) -> Callable:
+    def __init__(
+        self,
+        graph: Any,  # Graph object
+        tau: float,  # Diffusion time
+        order: int,  # Degree or numver of steps
+        method: str,  # filter `"pygsp"`, `"mar"`, `"euler"`
+    ) -> Callable:
         self.graph = graph
         self.tau = tau
         self.order = order
@@ -121,4 +122,3 @@ class Heat_filter:
 
         elif self.method == "exact":
             return self._filter @ b
-

@@ -15,36 +15,37 @@ from typing import Union
 from .heat_filter import Heat_filter
 import heatgeo.graph as graph_utils
 
-try: 
+try:
     import scprep
 except ImportError as imp_err:
     scprep = imp_err
 
 # %% ../nbs/embedding.ipynb 3
 class BaseEmb:
-    """Base class for embedding methods.
-    """
+    """Base class for embedding methods."""
 
     def __init__(
         self,
-        knn: int, # number of nearest neighbors
-        anisotropy: int = 0, # anisotropy parameter in the diffusion kernel
-        decay: int = 40, # decay parameter in the diffusion kernel
-        n_pca: int = 40, # number of principal components to use for knn estimation
-        tau: Union[int, str] = "auto", # diffusion time
-        emb_dim: int = 2, # embedding dimension
-        order: int = 32, # order of the Chebyshev approximation, or steps in Euler's method
-        random_state: int = 42, # random state for the embedding
-        scale_factor: float = 2.0, # power when computing the distance matrix
-        tau_min: float = 0.1, # minimum diffusion time
-        tau_max: float = 1.0, # maximum diffusion time
-        n_tau: int = 1, # number of diffusion times for entropy.
-        n_landmarks: Union[int, None] = None, # number of landmarks to summarize the data
-        solver: str = "sgd", # solver to use for MDS
-        lap_type: str = "normalized", # type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`
-        filter_method: str = "pygsp", # method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`
-        graph_type: str = "alpha", # type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`
-        mds_weights: Union[str, None] = None, # weights to use for MDS
+        knn: int,  # number of nearest neighbors
+        anisotropy: int = 0,  # anisotropy parameter in the diffusion kernel
+        decay: int = 40,  # decay parameter in the diffusion kernel
+        n_pca: int = 40,  # number of principal components to use for knn estimation
+        tau: Union[int, str] = "auto",  # diffusion time
+        emb_dim: int = 2,  # embedding dimension
+        order: int = 32,  # order of the Chebyshev approximation, or steps in Euler's method
+        random_state: int = 42,  # random state for the embedding
+        scale_factor: float = 2.0,  # power when computing the distance matrix
+        tau_min: float = 0.1,  # minimum diffusion time
+        tau_max: float = 1.0,  # maximum diffusion time
+        n_tau: int = 1,  # number of diffusion times for entropy.
+        n_landmarks: Union[
+            int, None
+        ] = None,  # number of landmarks to summarize the data
+        solver: str = "sgd",  # solver to use for MDS
+        lap_type: str = "normalized",  # type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`
+        filter_method: str = "pygsp",  # method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`
+        graph_type: str = "alpha",  # type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`
+        mds_weights: Union[str, None] = None,  # weights to use for MDS
     ):
         super().__init__()
         self.knn = knn
@@ -131,7 +132,7 @@ class BaseEmb:
         )
 
     def scatterplot(self, data, labels, title="Embedding", legend=False) -> None:
-        if isinstance(scprep,ImportError):
+        if isinstance(scprep, ImportError):
             raise ImportError("Please install scprep to use this function.")
         emb = self.fit_transform(data)
         scprep.plot.scatter2d(emb, c=labels, title=title, legend=legend)
@@ -356,5 +357,3 @@ class HeatGeo(BaseEmb):
         self.dist = (
             1 - self.denoise_regul
         ) * self.dist + self.denoise_regul * denoise_dist
-
-

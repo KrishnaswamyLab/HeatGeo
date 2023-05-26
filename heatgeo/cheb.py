@@ -205,4 +205,3 @@ def expm_multiply(
         return Y
     else:
         print(f"expm_multiply(): unsupported data type for tau ({type(tau)})")
-

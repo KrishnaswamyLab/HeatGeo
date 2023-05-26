@@ -11,6 +11,7 @@ from graphtools.matrix import set_diagonal, to_array
 from scipy import sparse
 from sklearn.preprocessing import normalize
 import numpy as np
+
 try:
     # optional dependencies
     import scanpy as sc
@@ -69,12 +70,14 @@ def get_knn_graph(X, knn=5, **kwargs):
     return pygsp.graphs.NNGraph(X, k=knn)
 
 
-def get_alpha_decay_graph(X, 
-                          knn:int=5, 
-                          decay:float=40.0, 
-                          anisotropy:float=0, 
-                          n_pca:int=None, 
-                          **kwargs):
+def get_alpha_decay_graph(
+    X,
+    knn: int = 5,
+    decay: float = 40.0,
+    anisotropy: float = 0,
+    n_pca: int = None,
+    **kwargs
+):
     return gt.Graph(
         X,
         knn=knn,
@@ -89,8 +92,7 @@ def get_alpha_decay_graph(X,
 def get_scanpy_graph(X, knn=5, **kwargs):
 
     if isinstance(sc, ImportError):
-        raise ImportError(
-            "Scanpy is not installed.")
+        raise ImportError("Scanpy is not installed.")
 
     adata = sc.AnnData(X)
     sc.pp.neighbors(adata, n_neighbors=knn)
@@ -100,10 +102,8 @@ def get_scanpy_graph(X, knn=5, **kwargs):
 
 def get_umap_graph(X, knn=5, **kwargs):  # knn default to 15 in UMAP
     if isinstance(umap, ImportError):
-        raise ImportError(
-            "UMAP is not installed.")
+        raise ImportError("UMAP is not installed.")
     umap_op = umap.UMAP(n_neighbors=knn, metric="euclidean")
     umap_op.fit(X)
     w = umap_op.graph_.toarray()
     return pygsp.graphs.Graph(w)
-

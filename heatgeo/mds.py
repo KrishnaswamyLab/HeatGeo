@@ -156,4 +156,3 @@ def embed_MDS(
     # re-orient to classic
     _, Y, _ = scipy.spatial.procrustes(Y_classic, Y)
     return Y
-

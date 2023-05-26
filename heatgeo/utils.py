@@ -49,7 +49,7 @@ def get_optimal_heat(emb_op, tau_max: float = 50, n_tau: int = 20):
     Optimal tau is found using Checbyshev approximation.
 
     Parameters
-    ---------
+    ----------
     emb_op: BaseEmb
         Embedding operator.
     tau_max: float
@@ -87,4 +87,3 @@ def get_optimal_heat(emb_op, tau_max: float = 50, n_tau: int = 20):
         )(np.eye(emb_op.graph.N))
     print("Optimal tau: ", taus[idx])
     return H_opt, taus[idx], entro_H[idx]
-
