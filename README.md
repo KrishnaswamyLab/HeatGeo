@@ -37,8 +37,8 @@ in the CLI. In `notebooks`, we provide examples on toy datasets.
 
 This repository is a simplified version of a larger codebase used for
 development. It loses the original commit history which contains
-contributions other authors of the paper. This repository uses or modify
-code from the PHATE implementation
+contributions from other authors of the paper. This repository uses or
+modify code from the PHATE implementation
 https://github.com/KrishnaswamyLab/PHATE, and the Chebychev polynomials
 implementation
 https://github.com/sibyllema/Fast-Multiscale-Diffusion-on-Graphs.
