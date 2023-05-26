@@ -7,6 +7,7 @@ __pycache__/
 
 # Portable Network Graphics
 *.png
+!fig/pbmc_phate_hg_lg.png
 
 # Distribution / packaging
 .Python
