@@ -18,3 +18,4 @@ scipy==1.9.1
 scprep==1.2.1
 setuptools==65.3.0
 POT
+kneed
