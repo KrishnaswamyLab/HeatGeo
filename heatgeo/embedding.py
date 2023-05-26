@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['BaseEmb', 'HeatGeo']
 
-# %% ../nbs/00_embedding.ipynb 3
+# %% ../nbs/00_embedding.ipynb 4
 import graphtools as gt
 import numpy as np
 import pygsp
@@ -20,7 +20,7 @@ try:
 except ImportError as imp_err:
     scprep = imp_err
 
-# %% ../nbs/00_embedding.ipynb 4
+# %% ../nbs/00_embedding.ipynb 5
 class BaseEmb:
     """Base class for embedding methods."""
 

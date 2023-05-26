@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['HeatEuler', 'HeatFilter']
 
-# %% ../nbs/01_heat_filter.ipynb 3
+# %% ../nbs/01_heat_filter.ipynb 4
 import numpy as np
 import scipy
 import pygsp
@@ -11,7 +11,7 @@ from .cheb import expm_multiply
 from scipy.sparse.linalg import eigsh
 from typing import Union, Any, Callable
 
-# %% ../nbs/01_heat_filter.ipynb 5
+# %% ../nbs/01_heat_filter.ipynb 6
 class HeatEuler:
     """Implicit Euler discretization of the heat equation using Cholesky prefactorization."""
 

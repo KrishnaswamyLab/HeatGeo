@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['diff_op', 'kernel_degree', 'diff_aff', 'get_knn_graph', 'get_alpha_decay_graph', 'get_scanpy_graph', 'get_umap_graph']
 
-# %% ../nbs/04_graph.ipynb 2
+# %% ../nbs/04_graph.ipynb 3
 import graphtools as gt
 import pygsp
 from typing import Union
@@ -20,7 +20,7 @@ except ImportError as imp_err:
     sc = imp_err
     umap = imp_err
 
-# %% ../nbs/04_graph.ipynb 3
+# %% ../nbs/04_graph.ipynb 4
 def diff_op(graph):
     """
     Compute the diffusion operator for a pygsp graph.

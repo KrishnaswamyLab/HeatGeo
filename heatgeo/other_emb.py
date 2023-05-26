@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['RandWalkGeo', 'DiffusionMap', 'ShortestPath', 'PhateBasic']
 
-# %% ../nbs/07_other_emb.ipynb 2
+# %% ../nbs/07_other_emb.ipynb 3
 from .embedding import BaseEmb, HeatGeo
 import heatgeo.graph as graph_utils
 import numpy as np
@@ -18,7 +18,7 @@ try:
 except ImportError as imp_err:
     phate = imp_err
 
-# %% ../nbs/07_other_emb.ipynb 3
+# %% ../nbs/07_other_emb.ipynb 4
 class RandWalkGeo(HeatGeo):
     """HeatGeo with a random walk matrix instead of Heat kernel."""
 
@@ -94,7 +94,7 @@ class RandWalkGeo(HeatGeo):
         if self.check_symmetric():
             self.symetrize_dist()
 
-# %% ../nbs/07_other_emb.ipynb 4
+# %% ../nbs/07_other_emb.ipynb 5
 class DiffusionMap(BaseEmb):
     """Diffusion Map embedding with different graph construction."""
 
@@ -151,7 +151,7 @@ class DiffusionMap(BaseEmb):
         )
         return self.emb
 
-# %% ../nbs/07_other_emb.ipynb 5
+# %% ../nbs/07_other_emb.ipynb 6
 class ShortestPath(BaseEmb):
     """Shortest path embedding with different graph construction."""
 
@@ -181,7 +181,7 @@ class ShortestPath(BaseEmb):
         euc_dist[A == 0] = 0
         self.dist = shortest_path(euc_dist, method="auto", directed=False)
 
-# %% ../nbs/07_other_emb.ipynb 6
+# %% ../nbs/07_other_emb.ipynb 7
 class PhateBasic(BaseEmb):
     """Wrapper for PHATE."""
 
