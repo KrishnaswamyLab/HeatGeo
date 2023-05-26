@@ -155,7 +155,7 @@ class new_heatgeo(BaseEmb):
         n_pca: int = 40,
         tau: int = 10,
         emb_dim: int = 2,
-        filter_method: str = "pygsp",
+        filter_method: str = "mar",
         order: int = 32,
         lap_type: str = "normalized",
         tau_min: float = 0.1,
@@ -164,8 +164,6 @@ class new_heatgeo(BaseEmb):
         log_normalize: bool = False,
         scale_factor: float = 1.0,
         denoising: bool = False,
-        n_ref: int = 50,
-        n_svd: int = 50,
         graph_type: str = "alpha",
         truncation_type: Union[str, None] = None,
         truncation_arg: Union[str, None] = None,
@@ -202,9 +200,7 @@ class new_heatgeo(BaseEmb):
             graph_type=graph_type,
         )
         self.log_normalize = log_normalize
-        self.n_ref = n_ref
         self.denoising = denoising
-        self.n_svd = n_svd
         self._n_tau = n_tau
         self._tau_max = tau_max
         self.truncation_type = truncation_type

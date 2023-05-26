@@ -5,7 +5,6 @@ __all__ = ['Heat_Euler', 'Heat_filter']
 
 # %% ../nbs/heat_filter.ipynb 2
 import numpy as np
-#from sksparse.cholmod import cholesky
 import scipy
 import pygsp
 from .cheb import expm_multiply
@@ -51,7 +50,7 @@ from typing import Union
 #         return u_l[self.K]
 
 class Heat_Euler:
-    """Implicit Euler discretization of the heat equation using Chelesky prefactorization."""
+    """Implicit Euler discretization of the heat equation using Cholesky prefactorization."""
 
     def __init__(self, L, t, K):
         """L: Laplacian N X N
