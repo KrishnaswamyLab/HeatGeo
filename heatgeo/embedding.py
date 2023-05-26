@@ -12,7 +12,7 @@ import scipy
 from .utils import interpolate, time_entropy, get_optimal_heat
 from scipy.spatial.distance import pdist, squareform
 from typing import Union
-from .heat_filter import Heat_filter
+from .heat_filter import HeatFilter
 import heatgeo.graph as graph_utils 
 
 try:
@@ -246,7 +246,7 @@ class HeatGeo(BaseEmb):
             else:
                 tau = [self.tau]
 
-            filter = Heat_filter(self.graph, tau, self.order, self.filter_method)
+            filter = HeatFilter(self.graph, tau, self.order, self.filter_method)
             heat_kernel = filter(eye).reshape(N, N, -1)
 
             self.entro_H = time_entropy(heat_kernel)

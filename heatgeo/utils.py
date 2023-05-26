@@ -5,7 +5,7 @@ __all__ = ['interpolate', 'time_entropy', 'get_optimal_heat']
 
 # %% ../nbs/utils.ipynb 2
 import numpy as np
-from .heat_filter import Heat_filter
+from .heat_filter import HeatFilter
 from kneed import KneeLocator
 
 
@@ -68,7 +68,7 @@ def get_optimal_heat(emb_op, tau_max: float = 50, n_tau: int = 20):
     """
     taus = np.linspace(0.05, tau_max, n_tau)
 
-    H = Heat_filter(graph=emb_op.graph, tau=taus, order=emb_op.order, method="mar")(
+    H = HeatFilter(graph=emb_op.graph, tau=taus, order=emb_op.order, method="mar")(
         np.eye(emb_op.graph.N)
     )
     H[H < 0] = 0
@@ -79,7 +79,7 @@ def get_optimal_heat(emb_op, tau_max: float = 50, n_tau: int = 20):
     if emb_op.filter_method == "mar":
         H_opt = H[..., idx]
     else:
-        H_opt = Heat_filter(
+        H_opt = HeatFilter(
             graph=emb_op.graph,
             tau=taus[idx],
             order=emb_op.order,

@@ -70,7 +70,7 @@ class RandWalkGeo(HeatGeo):
 
     def metric_computation(self, data):
         # TODO: wrap this in one classe/method adding the Cheb. approximation
-        # similar to the Heat_filter.
+        # similar to the HeatFilter.
         if self.filter_method == "exact":
             # P = self.graph.diff_op.toarray()
             P = graph_utils.diff_op(self.graph).toarray()
