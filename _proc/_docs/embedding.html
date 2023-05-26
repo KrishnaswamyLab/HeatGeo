@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 <pre><code> ShortestPath (knn:int, anisotropy:int=0, decay:int=40, n_pca:int=40,
                graph_type:str='alpha', **kwargs)</code></pre>
 </blockquote>
-<p>Base class for embedding methods. Arguments ——— knn: int Number of nearest neighbors to use for the graph. anisotropy: int Anisotropy parameter for the graph. decay: int Decay parameter for the kernel. n_pca: int Number of principal components to use for knn estimation. tau: int or str Diffusion time of the diffusion operator on the graph. emb_dim: int Dimension of the embedding. order: int Order of the Chebyshev approximation. random_state: int Random state for the embedding. scale_factor: int Power when computing the distance matrix. tau_min: float Minimum diffusion time for the diffusion operator. tau_max: float Maximum diffusion time for the diffusion operator. n_tau: int Number of diffusion times for the multiscale diffusion operator. n_landmarks: int Number of landmarks to summarize the data. solver: str Solver to use for MDS, <code>"sgd"</code> or <code>"smacof"</code>. lap_type: str Type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code>. filter_method: str Method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code>. graph_type: str Type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code>.</p>
+<p>Base class for embedding methods.</p>
 <hr>
 </section>
 <section id="diffusionmap" class="level3">
@@ -200,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
                emb_dim:int=2, anisotropy:int=0, graph_type:str='alpha',
                **kwargs)</code></pre>
 </blockquote>
-<p>Base class for embedding methods. Arguments ——— knn: int Number of nearest neighbors to use for the graph. anisotropy: int Anisotropy parameter for the graph. decay: int Decay parameter for the kernel. n_pca: int Number of principal components to use for knn estimation. tau: int or str Diffusion time of the diffusion operator on the graph. emb_dim: int Dimension of the embedding. order: int Order of the Chebyshev approximation. random_state: int Random state for the embedding. scale_factor: int Power when computing the distance matrix. tau_min: float Minimum diffusion time for the diffusion operator. tau_max: float Maximum diffusion time for the diffusion operator. n_tau: int Number of diffusion times for the multiscale diffusion operator. n_landmarks: int Number of landmarks to summarize the data. solver: str Solver to use for MDS, <code>"sgd"</code> or <code>"smacof"</code>. lap_type: str Type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code>. filter_method: str Method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code>. graph_type: str Type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code>.</p>
+<p>Base class for embedding methods.</p>
 <hr>
 </section>
 <section id="randwalkgeo" class="level3">
@@ -213,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
               denoising:bool=False, n_ref:int=50, n_svd:int=50,
               graph_type:str='alpha')</code></pre>
 </blockquote>
-<p>Base class for embedding methods. Arguments ——— knn: int Number of nearest neighbors to use for the graph. anisotropy: int Anisotropy parameter for the graph. decay: int Decay parameter for the kernel. n_pca: int Number of principal components to use for knn estimation. tau: int or str Diffusion time of the diffusion operator on the graph. emb_dim: int Dimension of the embedding. order: int Order of the Chebyshev approximation. random_state: int Random state for the embedding. scale_factor: int Power when computing the distance matrix. tau_min: float Minimum diffusion time for the diffusion operator. tau_max: float Maximum diffusion time for the diffusion operator. n_tau: int Number of diffusion times for the multiscale diffusion operator. n_landmarks: int Number of landmarks to summarize the data. solver: str Solver to use for MDS, <code>"sgd"</code> or <code>"smacof"</code>. lap_type: str Type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code>. filter_method: str Method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code>. graph_type: str Type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code>.</p>
+<p>Base class for embedding methods.</p>
 <hr>
 </section>
 <section id="new_heatgeo" class="level3">
@@ -233,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
               mds_weights_args:Optional[str]=None,
               denoise_regul:float=0.0)</code></pre>
 </blockquote>
-<p>Base class for embedding methods. Arguments ——— knn: int Number of nearest neighbors to use for the graph. anisotropy: int Anisotropy parameter for the graph. decay: int Decay parameter for the kernel. n_pca: int Number of principal components to use for knn estimation. tau: int or str Diffusion time of the diffusion operator on the graph. emb_dim: int Dimension of the embedding. order: int Order of the Chebyshev approximation. random_state: int Random state for the embedding. scale_factor: int Power when computing the distance matrix. tau_min: float Minimum diffusion time for the diffusion operator. tau_max: float Maximum diffusion time for the diffusion operator. n_tau: int Number of diffusion times for the multiscale diffusion operator. n_landmarks: int Number of landmarks to summarize the data. solver: str Solver to use for MDS, <code>"sgd"</code> or <code>"smacof"</code>. lap_type: str Type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code>. filter_method: str Method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code>. graph_type: str Type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code>.</p>
+<p>Base class for embedding methods.</p>
 <table class="table">
 <colgroup>
 <col style="width: 6%">
@@ -421,7 +421,133 @@ ul.task-list li input[type="checkbox"] {
           filter_method:str='pygsp', graph_type:str='alpha',
           mds_weights:Optional[str]=None)</code></pre>
 </blockquote>
-<p>Base class for embedding methods. Arguments ——— knn: int Number of nearest neighbors to use for the graph. anisotropy: int Anisotropy parameter for the graph. decay: int Decay parameter for the kernel. n_pca: int Number of principal components to use for knn estimation. tau: int or str Diffusion time of the diffusion operator on the graph. emb_dim: int Dimension of the embedding. order: int Order of the Chebyshev approximation. random_state: int Random state for the embedding. scale_factor: int Power when computing the distance matrix. tau_min: float Minimum diffusion time for the diffusion operator. tau_max: float Maximum diffusion time for the diffusion operator. n_tau: int Number of diffusion times for the multiscale diffusion operator. n_landmarks: int Number of landmarks to summarize the data. solver: str Solver to use for MDS, <code>"sgd"</code> or <code>"smacof"</code>. lap_type: str Type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code>. filter_method: str Method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code>. graph_type: str Type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code>.</p>
+<p>Base class for embedding methods.</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>knn</td>
+<td>int</td>
+<td></td>
+<td>number of nearest neighbors</td>
+</tr>
+<tr class="even">
+<td>anisotropy</td>
+<td>int</td>
+<td>0</td>
+<td>anisotropy parameter in the diffusion kernel</td>
+</tr>
+<tr class="odd">
+<td>decay</td>
+<td>int</td>
+<td>40</td>
+<td>decay parameter in the diffusion kernel</td>
+</tr>
+<tr class="even">
+<td>n_pca</td>
+<td>int</td>
+<td>40</td>
+<td>number of principal components to use for knn estimation</td>
+</tr>
+<tr class="odd">
+<td>tau</td>
+<td>Union</td>
+<td>auto</td>
+<td>diffusion time</td>
+</tr>
+<tr class="even">
+<td>emb_dim</td>
+<td>int</td>
+<td>2</td>
+<td>embedding dimension</td>
+</tr>
+<tr class="odd">
+<td>order</td>
+<td>int</td>
+<td>32</td>
+<td>order of the Chebyshev approximation, or steps in Euler’s method</td>
+</tr>
+<tr class="even">
+<td>random_state</td>
+<td>int</td>
+<td>42</td>
+<td>random state for the embedding</td>
+</tr>
+<tr class="odd">
+<td>scale_factor</td>
+<td>float</td>
+<td>2.0</td>
+<td>power when computing the distance matrix</td>
+</tr>
+<tr class="even">
+<td>tau_min</td>
+<td>float</td>
+<td>0.1</td>
+<td>minimum diffusion time</td>
+</tr>
+<tr class="odd">
+<td>tau_max</td>
+<td>float</td>
+<td>1.0</td>
+<td>maximum diffusion time</td>
+</tr>
+<tr class="even">
+<td>n_tau</td>
+<td>int</td>
+<td>1</td>
+<td>number of diffusion times for entropy.</td>
+</tr>
+<tr class="odd">
+<td>n_landmarks</td>
+<td>Optional</td>
+<td>None</td>
+<td>number of landmarks to summarize the data</td>
+</tr>
+<tr class="even">
+<td>solver</td>
+<td>str</td>
+<td>sgd</td>
+<td>solver to use for MDS</td>
+</tr>
+<tr class="odd">
+<td>lap_type</td>
+<td>str</td>
+<td>normalized</td>
+<td>type of Laplacian to use for the graph <code>"normalized"</code> or <code>"combinatorial"</code></td>
+</tr>
+<tr class="even">
+<td>filter_method</td>
+<td>str</td>
+<td>pygsp</td>
+<td>method to use for Heat approx. <code>"pygsp"</code> or <code>"euler"</code>, <code>"mar"</code></td>
+</tr>
+<tr class="odd">
+<td>graph_type</td>
+<td>str</td>
+<td>alpha</td>
+<td>type of graph to use for the embedding <code>"knn"</code> or <code>"alpha"</code> or <code>scanpy</code></td>
+</tr>
+<tr class="even">
+<td>mds_weights</td>
+<td>Optional</td>
+<td>None</td>
+<td>weights to use for MDS</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>

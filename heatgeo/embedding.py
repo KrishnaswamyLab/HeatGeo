@@ -22,64 +22,28 @@ import heatgeo.graph as graph_utils
 # %% ../nbs/embedding.ipynb 3
 class BaseEmb:
     """Base class for embedding methods.
-    Arguments
-    ---------
-        knn: int
-            Number of nearest neighbors to use for the graph.
-        anisotropy: int
-            Anisotropy parameter for the graph.
-        decay: int
-            Decay parameter for the kernel.
-        n_pca: int
-            Number of principal components to use for knn estimation.
-        tau: int or str
-            Diffusion time of the diffusion operator on the graph.
-        emb_dim: int
-            Dimension of the embedding.
-        order: int
-            Order of the Chebyshev approximation.
-        random_state: int
-            Random state for the embedding.
-        scale_factor: int
-            Power when computing the distance matrix.
-        tau_min: float
-            Minimum diffusion time for the diffusion operator.
-        tau_max: float
-            Maximum diffusion time for the diffusion operator.
-        n_tau: int
-            Number of diffusion times for the multiscale diffusion operator.
-        n_landmarks: int
-            Number of landmarks to summarize the data.
-        solver: str
-            Solver to use for MDS, `"sgd"` or `"smacof"`.
-        lap_type: str
-            Type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`.
-        filter_method: str
-            Method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`.
-        graph_type: str
-            Type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`.
     """
 
     def __init__(
         self,
-        knn: int,
-        anisotropy: int = 0,
-        decay: int = 40,
-        n_pca: int = 40,
-        tau: Union[int, str] = "auto",
-        emb_dim: int = 2,
-        order: int = 32,
-        random_state: int = 42,
-        scale_factor: float = 2.0,
-        tau_min: float = 0.1,
-        tau_max: float = 1.0,
-        n_tau: int = 1,
-        n_landmarks: Union[int, None] = None,
-        solver: str = "sgd",
-        lap_type: str = "normalized",
-        filter_method: str = "pygsp",
-        graph_type: str = "alpha",
-        mds_weights: Union[str, None] = None,
+        knn: int, # number of nearest neighbors
+        anisotropy: int = 0, # anisotropy parameter in the diffusion kernel
+        decay: int = 40, # decay parameter in the diffusion kernel
+        n_pca: int = 40, # number of principal components to use for knn estimation
+        tau: Union[int, str] = "auto", # diffusion time
+        emb_dim: int = 2, # embedding dimension
+        order: int = 32, # order of the Chebyshev approximation, or steps in Euler's method
+        random_state: int = 42, # random state for the embedding
+        scale_factor: float = 2.0, # power when computing the distance matrix
+        tau_min: float = 0.1, # minimum diffusion time
+        tau_max: float = 1.0, # maximum diffusion time
+        n_tau: int = 1, # number of diffusion times for entropy.
+        n_landmarks: Union[int, None] = None, # number of landmarks to summarize the data
+        solver: str = "sgd", # solver to use for MDS
+        lap_type: str = "normalized", # type of Laplacian to use for the graph `"normalized"` or `"combinatorial"`
+        filter_method: str = "pygsp", # method to use for Heat approx. `"pygsp"` or `"euler"`, `"mar"`
+        graph_type: str = "alpha", # type of graph to use for the embedding `"knn"` or `"alpha"` or `scanpy`
+        mds_weights: Union[str, None] = None, # weights to use for MDS
     ):
         super().__init__()
         self.knn = knn

@@ -64,7 +64,12 @@ def get_knn_graph(X, knn=5, **kwargs):
     return pygsp.graphs.NNGraph(X, k=knn)
 
 
-def get_alpha_decay_graph(X, knn=5, decay=40.0, anisotropy=0, n_pca=None, **kwargs):
+def get_alpha_decay_graph(X, 
+                          knn:int=5, 
+                          decay:float=40.0, 
+                          anisotropy:float=0, 
+                          n_pca:int=None, 
+                          **kwargs):
     return gt.Graph(
         X,
         knn=knn,
