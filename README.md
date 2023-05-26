@@ -26,6 +26,9 @@ pip install -e '.[dev]'
 
 ### How to use
 
+Google colab example on the swiss roll [![Run in Google
+Colab](https://img.shields.io/static/v1?label=Run%20in&message=Google%20Colab&color=orange&logo=Google%20Cloud.png)](https://colab.research.google.com/drive/1SkxGfWz8KLQpcea9MsdP7QEoe-yh5Iai?usp=sharing)
+
 The directory `experiments` contains code to reproduce our main results.
 We used `hydra`, the parameters can be changed in `config` or directly
 in the CLI. In `notebooks`, we provide examples on toy datasets.
