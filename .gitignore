@@ -8,6 +8,7 @@ __pycache__/
 # Portable Network Graphics
 *.png
 !nbs/fig/pbmc_phate_hg_lg.png
+!nbs/fig/diffusion.png
 
 # Distribution / packaging
 .Python
