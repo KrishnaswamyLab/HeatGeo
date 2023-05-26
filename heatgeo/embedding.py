@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['BaseEmb', 'HeatGeo']
 
-# %% ../nbs/embedding.ipynb 2
+# %% ../nbs/embedding.ipynb 3
 import graphtools as gt
 import numpy as np
 import pygsp
@@ -13,14 +13,14 @@ from .utils import interpolate, time_entropy, get_optimal_heat
 from scipy.spatial.distance import pdist, squareform
 from typing import Union
 from .heat_filter import Heat_filter
-import heatgeo.graph as graph_utils
+import heatgeo.graph as graph_utils 
 
 try:
     import scprep
 except ImportError as imp_err:
     scprep = imp_err
 
-# %% ../nbs/embedding.ipynb 3
+# %% ../nbs/embedding.ipynb 4
 class BaseEmb:
     """Base class for embedding methods."""
 

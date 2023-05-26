@@ -1,0 +1,11 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - cheb.ipynb
+      - embedding.ipynb
+      - graph.ipynb
+      - heat_filter.ipynb
+      - mds.ipynb
+      - other_emb.ipynb
+      - utils.ipynb
