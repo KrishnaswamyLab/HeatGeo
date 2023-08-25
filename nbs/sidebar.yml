@@ -2,10 +2,10 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - cheb.ipynb
-      - embedding.ipynb
-      - graph.ipynb
-      - heat_filter.ipynb
-      - mds.ipynb
-      - other_emb.ipynb
-      - utils.ipynb
+      - 00_embedding.ipynb
+      - 01_heat_filter.ipynb
+      - 02_cheb.ipynb
+      - 03_mds.ipynb
+      - 04_graph.ipynb
+      - 06_utils.ipynb
+      - 07_other_emb.ipynb
